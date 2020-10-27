@@ -21,6 +21,7 @@ getCourses(list)- Receives a list of courses and stores that in the class proper
 getGrades(list) - Receives a list of grades and stores that in the class property
 constructor     - should require the student name, studentNumber and grade (in that order)
 """
+import math
 
 class student:
 
@@ -31,47 +32,53 @@ class student:
     courses = []
     grades = []
 
-    def __init__(self, name, studentNumber, grade): # You will need to create your own input parameters for all methods
-        self.name = student(0)
-        self.studentNumber = student(1)
-        self.grade = student(2)
+    def __init__(self, name, studentNumber, grade, courses=[], grades=[]): # You will need to create your own input parameters for all methods
+        self.name = name
+        self.studentNumber = studentNumber
+        self.grade = grade
+        self.courses = courses
+        self.grades = grades
 
-    def __del__():
-        print("Deleted student info")
+    def __del__(self):
+        print("Bye " + self.name)
+
 
     def average(self):
         ave = sum(self.courses()) / len(self.courses())
         return ave
 
-    def getHonorRoll(self, courses):
+    def getHonorRoll(self):
         honor = self.courses()
-        honor.sort()
-        honor.remove(-1,-2,-3)
+        honor.sort
+        honor.reverse
+        honor = (honor[0] + honor[1] + honor[2] + honor[3] + honor[4])
         x = sum(honor) / len(honor)
-        if x > 86
+        if x > 86:
+            print("on honor roll")
             return True
         else:
-            return False
-        
+            print("not on honor roll")
+            return False       
 
-
-    def showCourses(self, courses):
+    def showCourses(self):
         print(self.courses)
 
-    def showGrade(self, x):
-        x = input("Enter your course number:")
-        self.courses[x]
-        self.grades[x]
+    def index(self):
+        index = input("Enter your course number:")
+        return int(index)
+
+    def showGrade(self, index):
+        self.courses[index]
+        self.grades[index]
          
 
     def getCourses(self, courses):
         self.courses = courses
 
-    def getGrades(self, grades)
+
+    def getGrades(self, grades):
         self.grades = grades
         
-
-
 
 def main():
     # This contains test data that will be used by the autograder.
@@ -84,8 +91,5 @@ def main():
     st2 = student("Joe Lunchbox","12346", 11)
     st2.getCourses( ["English","Math","Physics","Computers","Geography","Chemistry","French"] )
     st2.getGrades( [71, 98, 93, 95, 68, 81, 71])
-
-
-
 
 main()
