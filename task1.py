@@ -39,25 +39,18 @@ class student:
         self.courses = courses
         self.grades = grades
 
-    def __del__(self):
-        print("Bye " + self.name)
-
 
     def average(self):
-        ave = sum(self.courses()) / len(self.courses())
+        ave = sum(self.courses) / len(self.courses)
         return ave
 
     def getHonorRoll(self):
-        honor = self.courses()
-        honor.sort
-        honor.reverse
-        honor = (honor[0] + honor[1] + honor[2] + honor[3] + honor[4])
-        x = sum(honor) / len(honor)
-        if x > 86:
-            print("on honor roll")
+        self.courses.sort()
+        self.courses.reverse()
+        honor = (self.courses[0] + self.courses[1] + self.courses[2] + self.courses[3] + self.courses[4]) / 5
+        if honor > 86:
             return True
         else:
-            print("not on honor roll")
             return False       
 
     def showCourses(self):
@@ -79,6 +72,10 @@ class student:
     def getGrades(self, grades):
         self.grades = grades
         
+
+    def __del__(self):
+        print("Bye " + self.name)
+
 
 def main():
     # This contains test data that will be used by the autograder.
