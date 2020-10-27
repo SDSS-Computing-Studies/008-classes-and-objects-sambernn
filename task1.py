@@ -41,13 +41,13 @@ class student:
 
 
     def average(self):
-        ave = sum(self.courses) / len(self.courses)
+        ave = sum(self.grades) / len(self.grades)
         return ave
 
     def getHonorRoll(self):
-        self.courses.sort()
-        self.courses.reverse()
-        honor = (self.courses[0] + self.courses[1] + self.courses[2] + self.courses[3] + self.courses[4]) / 5
+        self.grades.sort()
+        self.grades.reverse()
+        honor = (self.grades[0] + self.grades[1] + self.grades[2] + self.grades[3] + self.grades[4]) / 5
         if honor > 86:
             return True
         else:
